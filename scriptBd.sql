@@ -1,5 +1,3 @@
-create database crasdefault;
-
 use crasdefault;
 
 create table Maquinas(
