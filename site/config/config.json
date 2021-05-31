@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "crasdefault",
+    "password": "#Gfgrupo8",
+    "database": "cras-default",
+    "host": "cras-default.database.windows.net",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "crasdefault",
+    "password": "#Gfgrupo8",
+    "database": "cras-default",
+    "host": "cras-default.database.windows.net",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "crasdefault",
+    "password": "#Gfgrupo8",
+    "database": "cras-default",
+    "host": "cras-default.database.windows.net",
+    "dialect": "mssql"
+  }
+}

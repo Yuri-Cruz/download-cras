@@ -1,0 +1,31 @@
+{
+  "name": "cloud",
+  "version": "0.0.1",
+  "private": "true",
+  "scripts": {
+    "preinstall": "sudo npm install",
+    "poststart": "sudo node ../bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.5.1",
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.2",
+    "tedious": "^11.0.7",
+    "cookie-parser": "~1.4.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "main": "index.js",
+  "description": ""
+}

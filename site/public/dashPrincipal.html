@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashPrincipal.css">
+    <link rel="stylesheet" href="css/graficoDinamico.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grafico.css">
+    <link rel="stylesheet" href="css/dashnavbar.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="shortcut icon" href="img/icone.png">
+
+    <script src="../../code/modules/data.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
+    <script src="https://kit.fontawesome.com/6eb2554daf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/disco.css">
+</head>
+
+<body>
+    <header id="navbar" class="navbar">
+        <input type="checkbox" id="check">
+        <label onclick="teste()" for="check" id="checkbtn" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul id="ulIcon" class="ulIcon">
+            <li><a href="Configuracoes.html"><i class="fas fa-user-circle"></i></a></li>
+            <li onclick="abrirModal()"><i class="fas fa-arrow-circle-down"></i></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i></a></li>
+            <li><a href="dashGeral.html"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+        <ul id="ulTexto" class="ulTexto">
+            <li><a href="Configuracoes.html">Perfil</a></li>
+            <li onclick="abrirModal()">Instalação</li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="dashGeral.html">Sair</a></li>
+        </ul>
+        <div class="logo">
+            <img src="./img/nova fonte logo sem fundo.png" alt="" class="logoGrande" id="logoGrande">
+            <img src="./img/icone.png" alt="" class="icone" id="icone">
+        </div>
+    </header>
+    <main class="main" id="trueMain">
+        <section id="main" class="main">
+            <div id="boxCima" class="boxCima">
+                <div id="background-gauge1" class="background">
+                    <div id="gauge1" class="gauges">
+                        <div id="container-cpu" class="grafico-cpu"></div>
+                    </div>
+                </div>
+                <img id="logo" src="./img/icone.png" alt="">
+                <div id="background-gauge2" class="background">
+                    <div id="gauge2" class="gauges">
+                        <div id="container-ram" class="grafico-ram"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="background-grafico" class="background-grafico">
+                <div id="boxGraph" class="boxGraph">
+                    <div id="container" class="grafico"></div>
+                </div>
+            </div>
+        </section>
+        <div class="discos" id="ds">
+        </div>
+        <div class="gambi"></div>
+    </main>
+    <div class="fundo-modal" id="modal">
+        <div class="modal">
+            <div class="fechar-modal">
+                <span class="fechar" onclick="fecharModal()"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="titulo">
+                <h1>Instalando a API</h1>
+                <div class="divisor-titulo"></div>
+            </div>
+            <div class="instrucoes">
+                <div class="etapa">
+                    <div class="etapa-texto">
+                        <h1>1º passo:</h1>
+                        <p>Baixe o script de instalação da API: <i class="fas fa-download"></i></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>2º passo:</h1>
+                        <p>Através do terminal executar o comando: <span>chmod 777 install_crasdefault.sh</span></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>3º e último passo:</h1>
+                        <p>Execute o script de instalação pelo terminal utilizando o comando:
+                            <span>./install_crasdefault.sh</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/CPU.js"></script>
+<script src="js/Ram.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/populatabelas.js"></script>
+<script src="js/modal.js"></script>

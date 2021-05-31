@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashGeral.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashnavbar.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="shortcut icon" href="img/icone.png">
+    <script src="https://kit.fontawesome.com/6eb2554daf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+</head>
+
+<body>
+    <header id="navbar" class="navbar">
+        <input type="checkbox" id="check">
+        <label onclick="menu3()" for="check" id="checkbtn" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul id="ulIcon" class="ulIcon">
+            <li><a href="Configuracoes.html"><i class="fas fa-user-circle"></i></a></li>
+            <li onclick="abrirModal()"><i class="fas fa-arrow-circle-down"></i></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i></a></li>
+            <li><a onclick="sair()"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+        <ul id="ulTexto" class="ulTexto">
+            <li><a href="Configuracoes.html">Perfil</a></li>
+            <li onclick="abrirModal()">Instalação</li>
+            <li><a href="#">Agenda</a></li>
+            <li><a onclick="sair()">Sair</a></li>
+        </ul>
+        <div class="logo">
+            <img src="./img/nova fonte logo sem fundo.png" alt="" class="logoGrande" id="logoGrande">
+            <img src="./img/icone.png" alt="" class="icone" id="icone">
+        </div>
+    </header>
+    <div class="fundo-modal" id="modal">
+        <div class="modal">
+            <div class="fechar-modal">
+                <span class="fechar" onclick="fecharModal()"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="titulo">
+                <h1>Instalando a API</h1>
+                <div class="divisor-titulo"></div>
+            </div>
+            <div class="instrucoes">
+                <div class="etapa">
+                    <div class="etapa-texto">
+                        <h1>1º passo:</h1>
+                        <p>Baixe o script de instalação da API: <i class="fas fa-download"></i></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>2º passo:</h1>
+                        <p>Através do terminal executar o comando: <span>chmod 777 install_crasdefault.sh</span></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>3º e último passo:</h1>
+                        <p>Execute o script de instalação pelo terminal utilizando o comando:
+                            <span>./install_crasdefault.sh</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="mainGeral">
+        <section class="mainGeral">
+            <div class="boxMapa" id="boxMapa">
+                <div id="container"></div>
+            </div>
+            <div class="boxLista" id="boxLista">
+                <table class="tabela">
+                    <thead>
+                        <th class="cabecalho">Hostname</th>
+                        <th class="cabecalho medidas">CPU</th>
+                        <th class="cabecalho medidas">RAM</th>
+                        <th class="cabecalho medidas">Disco Disponivel</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+<script src="js/mapa.js"></script>
+<script src="js/tabelaMaquinas.js"></script>
+<script src="js/trocaPagina.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/modal.js"></script>

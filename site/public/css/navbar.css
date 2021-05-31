@@ -1,0 +1,92 @@
+header {
+    background-color: rgb(0, 0, 0);
+}
+
+header .container {
+    width: 100%;
+    min-height: 14vh;
+    max-height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #101010;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 375px;
+    justify-content: space-around;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header li {
+    /* margin: 20px; */
+    font-size: 1.0rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+header a:hover {
+    transition: 0.3s;
+    color: #ba55d3;
+    cursor: pointer;
+}
+
+header .logo {
+    /* margin: .5rem; */
+    width: fit-content;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    display: none;
+}
+
+
+/* css para celular */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 639px) {
+    #navbar {
+        width: 100%;
+    }
+    .checkbtn {
+        color: white;
+        display: block;
+    }
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 110px;
+        left: 100%;
+        text-align: center;
+        transition: all .5s;
+        cursor: pointer;
+    }
+    header ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+}

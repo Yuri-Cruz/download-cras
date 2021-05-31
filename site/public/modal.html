@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cras Default</title>
+    <link rel="shortcut icon" href="img/icone.png">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/dashnavbar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/6eb2554daf.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header id="navbar" class="navbar">
+        <input type="checkbox" id="check">
+        <label onclick="menu()" for="check" id="checkbtn" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul id="ulIcon" class="ulIcon">
+
+            <li><a href="#section-two"><i class="fas fa-user-circle"></i></a></li>
+            <li class="current" onclick="abrirModal()"><a href="#section-three"><i class="fas fa-arrow-circle-down"></i></a></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i></a></li>
+            <li><a onclick="sair()"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+        <ul id="ulTexto" class="ulTexto">
+
+            <li><a href="#section-two">Perfil</a></li>
+            <li class="current" onclick="abrirModal()">Instalação</li>
+            <li><a href="#">Agenda</a></li>
+            <li><a onclick="sair()">Sair</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="./img/nova fonte logo sem fundo.png" alt="" class="logoGrande" id="logoGrande">
+            <img src="./img/icone.png" alt="" class="icone" id="icone">
+        </div>
+    </header>
+
+    <div class="fundo-modal" id="modal">
+        <div class="modal">
+            <div class="fechar-modal">
+                <span class="fechar" onclick="fecharModal()"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="titulo">
+                <h1>Instalando a API</h1>
+                <div class="divisor-titulo"></div>
+            </div>
+            <div class="instrucoes">
+                <div class="etapa">
+                    <div class="etapa-texto">
+                        <h1>1º passo:</h1>
+                        <p>Baixe o script de instalação da API: <i class="fas fa-download"></i></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>2º passo:</h1>
+                        <p>Através do terminal executar o comando: <span>chmod 777 install_crasdefault.sh</span></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>3º e último passo:</h1>
+                        <p>Execute o script de instalação pelo terminal utilizando o comando: <span>./install_crasdefault.sh</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="./js/navbar.js"></script>
+<script src="./js/modal.js"></script>

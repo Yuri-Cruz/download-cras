@@ -1,0 +1,286 @@
+footer {
+    height: 26rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    text-decoration: none;
+    outline: none;
+    color: floralwhite;
+    border-top: 2px solid #ba55d3;
+}
+
+footer p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.footer-container {
+    padding-top: 1.7rem;
+    height: 50%;
+    width: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-container h3 {
+    font-size: 1.5rem;
+}
+
+.footer-container .footer-sobre {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgb(186, 85, 211);
+}
+
+.footer-sobre h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1rem;
+}
+
+.footer-container .footer-acessos {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-container .footer-contato {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgb(186, 85, 211);
+}
+
+.footer-contato h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 3.3;
+    color: rgb(186, 85, 211);
+}
+
+.footer-contato .subscribe {
+    height: 4rem;
+    width: 13rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-contato .subscribe button {
+    height: 2.1rem;
+    width: 2.4rem;
+    padding-right: 0.6rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    color: black;
+    background: rgb(186, 85, 211);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.footer-contato .subscribe button:hover {
+    font-size: 1.3rem;
+}
+
+.footer-contato .subscribe input[type="email"] {
+    height: 2rem;
+    border: 1px;
+    width: 10rem;
+    outline: none;
+    border-radius: 3px;
+}
+
+.end-footer {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    height: 34%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.redes-sociais {
+    height: 50%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(186, 85, 211);
+    text-align: center;
+}
+
+.redes-sociais li {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: rgb(186, 85, 211);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.redes-sociais li:hover {
+    font-size: 1.8rem;
+}
+
+.copyright {
+    height: 50%;
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.footer-acessos h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.9;
+    color: rgb(186, 85, 211);
+}
+
+.footer-acessos .acessos-links {
+    list-style-type: none;
+}
+
+.footer-acessos .acessos-links li {
+    padding: .4rem 0;
+}
+
+.footer-acessos .acessos-links li a:link,
+.footer-acessos .acessos-links li a:visited {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    padding: 1.2rem 0;
+}
+
+.footer-acessos .acessos-links li a:hover {
+    transition: 0.3s;
+    color: #ba55d3;
+    cursor: pointer;
+}
+
+@media only screen and (max-device-width: 1024px){
+    .footer-acessos h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-contato h2 {
+        font-size: 1.5rem
+    }
+
+}
+
+@media only screen and (max-device-width: 425px){
+   
+    footer {
+        flex-direction: column;
+        height: fit-content;
+
+    }
+
+    .footer-container {
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        padding: 1rem;
+
+    }
+
+    .footer-container .footer-sobre {
+        height: 6.5rem;
+        width: 7rem;
+        align-items: center;
+        background-image: url(../img/icone.png);
+        background-size: cover;
+        display: block;
+
+    }
+
+    .footer-container .footer-acessos {
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        
+    }
+
+    .footer-container .footer-contato {
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        
+    }
+
+    .items {
+        margin-bottom: 1rem;
+    }
+
+    .footer-sobre img {
+        display: none;
+    }
+
+    .footer-sobre p {
+        display: none;
+
+    }
+
+    .footer-acessos .acessos-links li {
+        text-align: center;
+    }
+
+    .footer-contato h2 {
+        line-height: 2.3;
+    }
+
+    .footer-contato .subscribe {
+        width: 100%;
+
+    }
+
+    .novidades {
+        width: 100%;
+    }
+
+    .footer-contato .subscribe input[type="email"] {
+        width: calc(99% - 2.4rem);
+    }
+
+    .redes-sociais {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+
+}
+

@@ -1,0 +1,103 @@
+.container-servicos {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    text-rendering: optimizeLegibility;
+    background: linear-gradient(0deg, rgba(167, 62, 160, 1) 2%, rgba(213, 79, 219, 1) 52%, #ba55d3 82%);
+}
+
+.titulo-servicos {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1.5rem;
+}
+
+.content-servicos {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.content-servicos .servicos {
+    height: 400px;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.content-servicos .servicos img {
+    height: 250px;
+}
+
+.content-servicos .servicos h3 {
+    color: rgb(255, 255, 255);
+    font-size: 1.7rem;
+    margin-top: .8rem;
+}
+
+
+/* css para celular */
+
+@media only screen and (max-device-width: 425px) {
+    .container-servicos {
+        width: 100%;
+    }
+    .titulo-servicos {
+        text-align: center;
+        width: 100%;
+        font-size: 2.5rem;
+    }
+    .content-servicos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .servicos {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+    }
+    .servicos h3 {
+        text-align: center;
+        width: 95%;
+    }
+}
+
+@media only screen and (min-device-width: 426px) and (max-device-width: 1024px) {
+    .container-servicos {
+        width: 100%;
+    }
+    .titulo-servicos {
+        text-align: center;
+        width: 100%;
+        font-size: 2.5rem;
+    }
+    .content-servicos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .servicos {
+        width: 100% !important;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .servicos h3 {
+        text-align: center;
+        width: 95%;
+    }
+    .dashH3 {
+        width: 80%;
+    }
+}

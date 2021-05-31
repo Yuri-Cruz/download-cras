@@ -1,0 +1,98 @@
+#navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 5%;
+    align-items: center;
+    background-color: #000;
+    justify-content: space-around;
+    position: fixed;
+}
+
+
+/* .navbar{
+    position: fixed;
+} */
+
+.navbar .ulIcon {
+    display: flex;
+    width: 100%;
+    height: 54%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.navbar .ulTexto {
+    display: none;
+    width: 100%;
+    height: 54%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 100%;
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.navbar li:hover {
+    width: 100%;
+    transition: 0.3s;
+    background: #ba55d3;
+}
+
+.current {
+    background-color: #ba55d3;
+}
+
+.logo {
+    width: fit-content;
+}
+
+.logo .logoGrande {
+    height: 40px;
+    display: none;
+}
+
+.icone {
+    height: 40px;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    display: block;
+    color: #ba55d3;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.logo {
+    width: fit-content;
+}
+
+.logo .logoGrande {
+    height: 40px;
+    display: none;
+}
+
+.icone {
+    height: 40px;
+}

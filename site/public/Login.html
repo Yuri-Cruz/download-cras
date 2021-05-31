@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cras Default</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="img/icone.png">
+    <script src="https://kit.fontawesome.com/6eb2554daf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="container">
+            <input type="checkbox" id="check">
+            <div class="logo">
+                <a href="index.html"><img src="./img/nova fonte logo sem fundo.png" alt=""></a>
+            </div>
+            <ul>
+                <li><a href="Login.html">Sobre</a></li>
+                <li><a href="Cadastro.html">Cadastro</a></li>
+            </ul>
+            <label for="check" class="checkbtn" onclick="invisivel()">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="mainBox">
+                <img src="./img/imgLogin.svg" class="imgLogin">
+                <div class="loginContent">
+                    <img src="./img/iconLogin.svg" alt="" class="iconLogin">
+                    <ul class="invisivel erros" id="menssagemErro"></ul>
+                    <form id="form" action="">
+                        <div class="fullBox">
+                            <i class="fas fa-user"></i>
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="fullBox">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="senha" placeholder="Senha">
+                        </div>
+                        <input type="submit" value="Entrar" id="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-sobre">
+                <img src="./img/nova fonte logo sem fundo.png" alt="">
+                <p>Mais facilidade, agilidade e produtividade.<br><br> A Cras Default está focada em melhorar seu dia-a-dia.
+                </p>
+            </div>
+            <div class="footer-acessos">
+                <h3>Links Uteis</h3>
+                <ul class="acessos-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href=" #section-two">Sobre</a></li>
+                    <li><a href="#section-three">Serviços</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contato">
+                <h2>Newsletter</h2>
+                <p>Receba Novidades:</p>
+                    <div class="subscribe">
+                        <input type="email" placeholder="Digite aqui seu e-mail">
+                        <button><i class="far fa-paper-plane"></i></button>
+                    </div>
+            </div>
+        </div>
+        <div class="end-footer">
+            <ul class="redes-sociais">
+                <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                <li><i class="fab fa-linkedin" aria-hidden="true"></i></li>
+                <li><i class="fab fa-instagram" aria-hidden="true"></i></li>
+                <li><i class="fab fa-github" aria-hidden="true"></i></li>
+            </ul>
+            <div class="footer-copy">
+                <p class="copyright">&copy; Todos os Direitos Reservados - 2021 Cras Default</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="js/login.js"></script>

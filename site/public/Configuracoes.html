@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="css/configuracoes.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashnavbar.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <link rel="shortcut icon" href="img/icone.png">
+
+    <script src="https://kit.fontawesome.com/6eb2554daf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="navbar" class="navbar">
+        <input type="checkbox" id="check">
+        <label onclick="menu2()" for="check" id="checkbtn" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul id="ulIcon" class="ulIcon">
+            <li class="current"><a href="Configuracoes.html"><i class="fas fa-user-circle"></i></a></li>
+            <li onclick="abrirModal()"><i class="fas fa-arrow-circle-down"></i></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i></a></li>
+            <li><a href="dashGeral.html"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+        <ul id="ulTexto" class="ulTexto">
+            <li class="current"><a href="#section-two">Perfil</a></li>
+            <li onclick="abrirModal()">Instalação</li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="dashGeral.html">Sair</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="./img/nova fonte logo sem fundo.png" alt="" class="logoGrande" id="logoGrande">
+            <img src="./img/icone.png" alt="" class="icone" id="icone">
+        </div>
+    </header>
+
+    <div class="fundo-modal" id="modal">
+        <div class="modal">
+            <div class="fechar-modal">
+                <span class="fechar" onclick="fecharModal()"><i class="far fa-times-circle"></i></span>
+            </div>
+            <div class="titulo">
+                <h1>Instalando a API</h1>
+                <div class="divisor-titulo"></div>
+            </div>
+            <div class="instrucoes">
+                <div class="etapa">
+                    <div class="etapa-texto">
+                        <h1>1º passo:</h1>
+                        <p>Baixe o script de instalação da API: <i class="fas fa-download"></i></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>2º passo:</h1>
+                        <p>Através do terminal executar o comando: <span>chmod 777 install_crasdefault.sh</span></p>
+                    </div>
+                    <div class="etapa-texto">
+                        <h1>3º e último passo:</h1>
+                        <p>Execute o script de instalação pelo terminal utilizando o comando:
+                            <span>./install_crasdefault.sh</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="configuracoes" id="configuracoes">
+        <div class="container-config" id="container-config">
+            <div class="usuario" id="usuario">
+                <div class="alteracao" id="alteracao">
+                    <h2>Alterar dados do usuário</h2>
+                    <form id="formUsuario">
+                        <ul class="invisivel erros" id="erroFormUsuario"></ul>
+                        <label for="">Nome</label>
+                        <input type="text" id="nome" placeholder="Flavio dos Santos">
+                        <label for="">Email</label>
+                        <input type="text" id="email" placeholder="seu@email.com" disabled>
+                        <label for="">Senha atual</label>
+                        <input class="repetir" type="password" id="senhaAtual" placeholder="**********">
+                        <div class="senha">
+                            <div class="nova">
+                                <label for="">Nova senha</label>
+                                <input type="password" id="novaSenha" placeholder="**********">
+                            </div>
+                            <div class="atual">
+                                <label for="">Repita nova senha</label>
+                                <input type="password" id="confirmacaoNovaSenha" placeholder="**********">
+                            </div>
+                        </div>
+
+                        <button>Salvar alterações</button>
+                    </form>
+                </div>
+                <div class="criacao" id="criacao">
+                    <h2>Adicionar novo usuário</h2>
+                    <form id="formNovoUsuario">
+                        <ul class="invisivel erros" id="erroFormNovoUsuario"></ul>
+                        <label for="">Nome</label>
+                        <input id="nomeNovoUser" type="text">
+                        <label for="">Email</label>
+                        <input id="emailNovoUser" type="email" placeholder="seu@email.com">
+
+                        <div class="senha">
+                            <div class="atual">
+                                <label for="">Senha</label>
+                                <input id="senhaNovoUser" type="password" placeholder="**********">
+                            </div>
+                            <div class="nova">
+                                <label for="">Repita a senha</label>
+                                <input id="confirmacaoSenhaNovoUser" type="password" placeholder="**********">
+                            </div>
+                        </div>
+
+                        <button>Adicionar usuário</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contato">
+                <div class="infoContato">
+                    <h2>Alterar informações de contato</h2>
+                    <div class="formsContato">
+                        <form id="formEmpresa">
+                            <ul class="invisivel erros" id="erroFormEmpresa"></ul>
+                            <div class="empresa">
+                                <div class="empresaDados">
+                                    <label for="">Empresa</label>
+                                    <input type="text" id="empresa" disabled>
+                                </div>
+                                <div class="endereco">
+                                    <label for="">Endereço</label>
+                                    <input type="text" id="endereco" disabled>
+                                </div>
+                            </div>
+                            <div class="camposContato">
+                                <div class="cnpj">
+                                    <label for="">CNPJ</label>
+                                    <input type="text" id="cnpj" disabled>
+                                </div>
+                                <div class="comercial">
+                                    <label for="">Telefone Comercial</label>
+                                    <input type="text" id="telComercial" maxlength="14" onkeyup="mascara('(##) ####-####',this,event)">
+                                </div>
+                                <div class="celular">
+                                    <label for="">Telefone Celular</label>
+                                    <input type="text" id="cel" maxlength="16" placeholder="Telefone celular" onkeyup="mascara('(##) # ####-####',this,event)">
+                                </div>
+                            </div>
+                            <div class="botao">
+                                <button>Salvar alterações</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parametros">
+                <div class="infoParametros">
+                    <h2>Definir parâmetros de alertas</h2>
+                    <form id="formParametros">
+                        <ul class="invisivel erros" id="erroFormParametros"></ul>
+                        <div class="dados">
+                            <label for="">CPU</label>
+                            <input type="number" min="0" id="cpu" placeholder="Ex. 50%">
+                        </div>
+                        <div class="dados">
+                            <label for="">RAM</label>
+                            <input type="number" min="0" id="ram" placeholder="Ex. 50%">
+                        </div>
+                        <div class="dados">
+                            <label for="">Disco</label>
+                            <input type="number" min="0" id="disco" placeholder="Ex. 50%">
+                        </div>
+                        <div class="botao2">
+                            <button>Salvar alterações</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+<script src="js/navbar.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/config.js"></script>
+<script src="js/alteraUsuario.js"></script>
+<script src="js/criaNovoUsuario.js"></script>
+<script src="js/alteraContato.js"></script>
+<script src="js/alteraParametros.js"></script>
+<script src="js/mascara.min.js"></script>

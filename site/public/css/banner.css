@@ -1,0 +1,184 @@
+.container-banner {
+    height: calc(100vh - 13vh);
+    width: 100%;
+}
+
+.banner {
+    background-blend-mode: color;
+    background: url(../img/bannerNovo.svg) #20202082;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 63%;
+    height: 100%;
+}
+
+.describe {
+    font-size: 1.2rem;
+}
+
+.texto-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 5rem;
+    margin: auto;
+
+    /* borda falsa */
+    position: relative;
+    padding: 10px;
+}
+
+.texto-item2 {
+    width: 65%;
+    height: 60%;
+
+    /* borda falsa */
+    position: relative;
+    padding: 10px;
+}
+
+.texto-item::after,
+.texto-item::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+}
+
+.texto-item::after {
+    /* borda parcial da direita */
+    top: 0;
+    left: 0;
+    border-left: 2px solid #ba55d3;
+    height: 18%;
+    margin: 2rem -1rem;
+}
+
+.texto-item::before {
+    /* borda parcial da esquerda */
+    top: 0;
+    left: 0;
+    border-top: 2px solid #ba55d3;
+    width: 18%;
+    margin: 2rem -1rem;
+}
+
+.texto-item2::after,
+.texto-item2::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+}
+
+.texto-item2::after {
+    /* borda parcial da direita */
+    bottom: 0;
+    right: 0;
+    border-right: 2px solid #ba55d3;
+    height: 18%;
+    margin-bottom: 2rem;
+}
+
+.texto-item2::before {
+    /* borda parcial da esquerda */
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #ba55d3;
+    width: 18%;
+    margin-bottom: 2rem;
+}
+
+.texto-item h2 {
+    text-transform: uppercase;
+    font-size: smaller;
+}
+
+.texto-item button {
+    height: 2.7rem;
+    width: 9rem;
+    outline: none;
+    border-radius: 30px;
+    border: 2px solid mediumorchid;
+    background-color: #ffffff40;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.texto-item button:hover {
+    font-size: 1.1rem;
+    background: #ffffff2a;
+}
+
+.describe {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* css para celular */
+
+@media only screen and (max-device-width: 1140px) {
+    .texto-item {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-device-width: 900px) {
+    .texto-item {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-device-width: 690px) {
+    .texto-item {
+        font-size: 2rem;
+    }
+
+    .describe p {
+        font-size: 0.9rem;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .banner {
+        background: url(../img/a.svg) #000000bf;
+        background-size: cover;
+    }
+
+    .divisor-sobre svg {
+        color: #000000;
+    }
+
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container-banner {
+        height: 90vh;
+    }
+
+    .describe p {
+        font-size: 1rem;
+    }
+
+    .texto-item2 {
+        width: 70%;
+        height: 75%;
+    }
+}

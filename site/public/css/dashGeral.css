@@ -1,0 +1,67 @@
+.medidas {
+    width: 160px;
+}
+
+.mainGeral {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#boxMapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+}
+
+#boxLista {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.boxLista .tabela {
+    width: 80%;
+    border-spacing: 10px;
+    border-collapse: separate;
+    outline: none;
+}
+
+.boxLista .tabela .cabecalho {
+    font-size: 18px;
+    color: #fff;
+    vertical-align: middle;
+    height: 2rem;
+    background: #ba55d3;
+    border: 2px darkmagenta solid;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.boxLista .tabela tr td {
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    height: 2rem;
+    border: 2px darkmagenta solid;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.boxLista .tabela tr td:hover {
+    background-color: #ba55d3;
+    transition: 0.3s;
+    color: white;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 639px) {
+    .navbar {
+        padding: .5rem;
+    }
+}

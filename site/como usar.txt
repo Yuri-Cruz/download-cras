@@ -1,0 +1,6 @@
+de npm i
+depois de configure um usuario na config
+crie o database crassdegault
+de npx sequelize-cli db:migrate
+e esta pronto de npm start para rodar so servidor que esta em localhost:3000
+obs: o nodemon ja essta automatico no npm start
