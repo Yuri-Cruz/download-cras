@@ -74,6 +74,18 @@ class MaquinaController {
             return res.status(500).json(erro.message)
         }
     }
+
+    static async alteraCordenadas(req, res){
+        const { hostName } = req.params;
+        const novasInfo = req.body;
+        try{
+            await database.Maquina.update(novasInfo,{where: { hostName: hostName}})
+            const addCordenadas = await database.Maquina.findOne({where: {hostName: hostName}})
+            return res.status(200).json(addCordenadas)
+        } catch (erro) {
+            return res.status(500).json(erro.message)
+        }
+    }
 }
 
 module.exports = MaquinaController

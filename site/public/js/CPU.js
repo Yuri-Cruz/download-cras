@@ -37,13 +37,16 @@ console.time('line');
 Highcharts.chart('container-cpu', {
 
   chart: {
-    zoomType: 'x'
-    color: '#ffffff'
+    borderRadius: '10px',
+    zoomType: 'x',
+    backgroundColor: '#000000'
   },
 
   title: {
-    text: 'Uso de CPU',
-    color: '#ffff'
+    style: {
+      color: '#b455d3'
+    },
+    text: 'Uso de CPU'
   },
 
   tooltip: {
@@ -51,10 +54,28 @@ Highcharts.chart('container-cpu', {
   },
 
   xAxis: {
-    type: 'datetime'
+    type: 'datetime',
+    labels: {
+      style: {
+        color: '#ffff'
+      }
+    }
   },
-
+  yAxis: {
+    title: {
+      style: {
+        color: '#b455d3'
+      },
+      text: 'CPU'
+    },
+    labels: {
+      style: {
+        color: '#ffff'
+      }
+    }
+  },
   series: [{
+    color: '#b455d3',
     data: data,
     lineWidth: 1.5,
     name: 'CPU'

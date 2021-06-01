@@ -37,13 +37,16 @@ console.time('line');
 Highcharts.chart('container-ram', {
 
   chart: {
-    zoomType: 'x'
-    color: '#ffffff'
+    borderRadius: '10px',
+    zoomType: 'x',
+    backgroundColor: '#000000'
   },
 
   title: {
-    text: 'Uso de RAM',
-    color: '#ffff'
+    style: {
+      color: '#b455d3'
+    },
+    text: 'Uso de RAM'
   },
 
   tooltip: {
@@ -51,10 +54,29 @@ Highcharts.chart('container-ram', {
   },
 
   xAxis: {
-    type: 'datetime'
-  },
+    type: 'datetime',
+    labels: {
+      style: {
+        color: '#ffff'
+      }
+    }
 
+  },
+  yAxis: {
+    title: {
+      style: {
+        color: '#b455d3'
+      },
+      text: 'RAM'
+    },
+    labels: {
+      style: {
+        color: '#ffff'
+      }
+    }
+  },
   series: [{
+    color: '#b455d3',
     data: data,
     lineWidth: 1.5,
     name: 'RAM'

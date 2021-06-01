@@ -57,7 +57,7 @@ fetch(`/maquina/especifica/${sessionStorage.hostName}`, {
     }).then((res) => {
       console.log(res);
       for (let index = 0; index < res.length; index++) {
-        if(res[index].espacoTotal != 0){
+        if (res[index].espacoTotal != 0) {
           var discoDisponivel = (((res[index].espacoTotal - res[index].espacoDisponivel) * 100) / res[index].espacoTotal).toFixed(2)
           ds.innerHTML += `
           <div class="disco">
@@ -76,28 +76,39 @@ function plotaGrafico(dataCpu, dataRam) {
   Highcharts.chart('container', {
 
     chart: {
-      backgroundColor: '#313131',
-      color: '#ffffff'
+      zoomType: 'x',
+      borderRadius: '10px',
+      backgroundColor: '#000000'
     },
 
     title: {
-      color: '#ffffff',
-      text: 'Solar Employment Growth by Sector, 2010-2016'
-    },
-
-    subtitle: {
-      color: '#FFFFFF',
-      text: 'Monitoramento das Máquinas'
+      text: 'Dados',
+      style: {
+        color: '#b455d3'
+      }
     },
 
     yAxis: {
       title: {
-        text: 'Leitura'
+        text: 'Leitura',
+        style: {
+          color: '#b455d3'
+        }
+      },
+      labels: {
+        style: {
+          color: '#ffff'
+        }
       }
     },
 
     xAxis: {
-      type: 'datetime'
+      type: 'datetime',
+      labels: {
+        style: {
+          color: '#ffff'
+        }
+      }
     },
 
     time: {

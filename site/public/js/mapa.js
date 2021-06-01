@@ -41,7 +41,7 @@ fetch('./json/geojs-35-mun.json').then((res) => {
         chart: {
             map: res,
             width: 1000,
-            height: 450
+            height: 450,
         },
 
         title: {
