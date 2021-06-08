@@ -29,7 +29,7 @@ function validaUsuario(usuario) {
 
     if (usuario.cnpj == '') {
         erro.push('O CNPJ não pode estar em branco.');
-    } else if(usuario.cnpj.length < 14){
+    } else if (usuario.cnpj.length < 14) {
         erro.push('O CNPJ deve conter 14 caracteres.')
     }
 
@@ -64,7 +64,7 @@ function validaContato(usuario) {
 
     if (usuario.cep == '') {
         erro.push('O CEP não pode estar em branco.');
-    } else if(usuario.cep.length < 8){
+    } else if (usuario.cep.length < 8) {
         erro.push('O CEP deve conter 14 caracteres.');
     }
 
@@ -74,7 +74,7 @@ function validaContato(usuario) {
     return erro;
 }
 
-function exibeErro(erros,i) {
+function exibeErro(erros, i) {
     ul[i].innerHTML = "";
     erros.forEach(erro => {
         var li = document.createElement('li');
@@ -86,12 +86,12 @@ function exibeErro(erros,i) {
 
 // troca de formulario
 const formulario1 = document.getElementById('form1')
-formulario1.addEventListener('submit', function (e) {
+formulario1.addEventListener('submit', function(e) {
     e.preventDefault();
     var usuario = criaEstrutura();
     var erros = validaUsuario(usuario);
     if (erros.length > 0) {
-        exibeErro(erros,0);
+        exibeErro(erros, 0);
         return;
     } else {
         loginContent.style.display = "none";
@@ -101,16 +101,16 @@ formulario1.addEventListener('submit', function (e) {
 });
 
 const formulario2 = document.querySelector('[data-btn-enviar]');;
-formulario2.addEventListener('click', function (e) {
+formulario2.addEventListener('click', function(e) {
     e.preventDefault();
     console.log("click");
     var usuario = criaEstrutura();
     var erros = validaContato(usuario);
     if (erros.length > 0) {
-        exibeErro(erros,1);
+        exibeErro(erros, 1);
         return;
     } else {
-        if(botao){
+        if (botao) {
             botao = false;
             cadastraEndereco();
             cadastraCliente();
@@ -145,7 +145,7 @@ function cadastraEndereco() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-    }).then(function (response) {
+    }).then(function(response) {
         if (!response.ok) {
             console.log(response);
         }
@@ -153,13 +153,27 @@ function cadastraEndereco() {
 }
 
 function cadastraCliente() {
+    var cnpj1 = cnpj.value.replaceAll('.', '');
+    cnpj1 = cnpj1.replaceAll('-', '');
+    cnpj1 = cnpj1.replaceAll('/', '');
+
+    var telCom = comercial.value.replaceAll('(', '');
+    telCom = telCom.replaceAll(')', '');
+    telCom = telCom.replaceAll('-', '');
+    telCom = telCom.replaceAll(' ', '');
+
+    var cel = celular.value.replaceAll('(', '');
+    cel = cel.replaceAll(')', '');
+    cel = cel.replaceAll('-', '');
+    cel = cel.replaceAll(' ', '');
+
     var form = {
         nomeEmpresa: empresa.value,
-        cnpj: cnpj.value,
+        cnpj: cnpj1,
         numero: numero.value,
         complemento: complementeo.value,
-        telefoneCelular: celular.value,
-        telefoneComercial: comercial.value
+        telefoneCelular: cel,
+        telefoneComercial: telCom
     }
     fetch(`/endereco/${cep.value.replace("-","")}/cliente`, {
         method: 'POST',
@@ -167,52 +181,58 @@ function cadastraCliente() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-    }).then(function (response) {
+    }).then(function(response) {
         if (!response.ok) {
             var erro = [response];
-            exibeErro(erro,1);
+            exibeErro(erro, 1);
         }
         cadastraUsuario()
     });
 }
 
 function defineParametros() {
+    var cnpj1 = cnpj.value.replaceAll('.', '');
+    cnpj1 = cnpj1.replaceAll('-', '');
+    cnpj1 = cnpj1.replaceAll('/', '');
     var form = {
         cpu: 80,
         ram: 80,
         discos: 80
     }
-    fetch(`/endereco/${cnpj.value}/parametro`, {
+    fetch(`/endereco/${cnpj1}/parametro`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-    }).then(function (response) {
-        if(response.ok){
+    }).then(function(response) {
+        if (response.ok) {
             window.location.href = 'Login.html'
         }
     });
 }
 
 function cadastraUsuario() {
+    var cnpj1 = cnpj.value.replaceAll('.', '');
+    cnpj1 = cnpj1.replaceAll('-', '');
+    cnpj1 = cnpj1.replaceAll('/', '');
     var form = {
         email: email.value,
         nome: nome.value,
         senha: senha.value
     }
-    fetch(`/endereco/${cnpj.value}/usuario`, {
+    fetch(`/endereco/${cnpj1}/usuario`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-    }).then(function (response) {
+    }).then(function(response) {
         if (response.ok) {
             defineParametros()
         } else {
             var erro = [response];
-            exibeErro(erro,1);
+            exibeErro(erro, 1);
         }
     });
 }

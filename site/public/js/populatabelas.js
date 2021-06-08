@@ -18,7 +18,7 @@ fetch(`/maquina/especifica/${sessionStorage.hostName}`, {
     todosLogs = res
     var dataCpu = []
     var dataRam = []
-    var start = (todosLogs.length - 10);
+    var start = (todosLogs.length - todosLogs.length);
     for (var i = start; i < todosLogs.length; i++) {
       dataCpu.push([new Date(todosLogs[i].momentoCaptura).getTime(), todosLogs[i].usoCpu])
     }
@@ -29,19 +29,7 @@ fetch(`/maquina/especifica/${sessionStorage.hostName}`, {
 
     plotaGrafico(dataCpu, dataRam)
     dataCpuGlobal = dataCpu;
-    dataRamGlobal = dataRam
-    fetch(`/log/ultimo/${sessionStorage.hostName}`, {
-      method: 'GET',
-    }).then(function (response) {
-      return response.json();
-    }).then((res) => {
-      ultimoLog = res
-      chartRAM.series[0].points[0].update(Number(((ultimoLog.usoMemoria * 100) / maquina.qtdMemoria).toFixed(2)));
-      chartCPU.series[0].points[0].update(ultimoLog.usoCpu)
-    }).then(() => {
-      document.getElementById('container').style.overflow = 'visible'
-    })
-
+    dataRamGlobal = dataRam;
 
     for (let index = 1; index <= maquina.qtdParticoes; index++) {
       promises.push(fetch(`/maquina/ultimaMedicaoDisco/${maquina.hostName}/${index}`, {
@@ -50,6 +38,7 @@ fetch(`/maquina/especifica/${sessionStorage.hostName}`, {
 
     }
   }).then(() => {
+    document.getElementById('container').style.overflow = 'visible'
     Promise.all(promises).then(function (response) {
       return Promise.all(response.map(function (resposta) {
         return resposta.json();
@@ -72,8 +61,8 @@ fetch(`/maquina/especifica/${sessionStorage.hostName}`, {
   })
 })
 
-function plotaGrafico(dataCpu, dataRam) {
-  Highcharts.chart('container', {
+function plotaGrafico(dataRam, dataCpu) {
+  Highcharts.chart('container-ram', {
 
     chart: {
       zoomType: 'x',
@@ -82,7 +71,7 @@ function plotaGrafico(dataCpu, dataRam) {
     },
 
     title: {
-      text: 'Dados',
+      text: 'Dados RAM',
       style: {
         color: '#b455d3'
       }
@@ -90,7 +79,7 @@ function plotaGrafico(dataCpu, dataRam) {
 
     yAxis: {
       title: {
-        text: 'Leitura',
+        text: 'Leitura RAM',
         style: {
           color: '#b455d3'
         }
@@ -129,14 +118,95 @@ function plotaGrafico(dataCpu, dataRam) {
         }
       }
     },
+    tooltip: {
+      valueDecimals: 2
+    },
+    series: [{
+      color: '#b455d3',
+      lineWidth: 1.5,
+      name: 'RAM',
+      data: dataRam
+    }],
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+
+
+  });
+  Highcharts.chart('container', {
+
+    chart: {
+      zoomType: 'x',
+      borderRadius: '10px',
+      backgroundColor: '#000000'
+    },
+
+    title: {
+      text: 'Dados CPU',
+      style: {
+        color: '#b455d3'
+      }
+    },
+
+    yAxis: {
+      title: {
+        text: 'Leitura CPU',
+        style: {
+          color: '#b455d3'
+        }
+      },
+      labels: {
+        style: {
+          color: '#ffff'
+        }
+      }
+    },
+
+    xAxis: {
+      type: 'datetime',
+      labels: {
+        style: {
+          color: '#ffff'
+        }
+      }
+    },
+    tooltip: {
+      valueDecimals: 2
+    },
+    time: {
+      useUTC: true
+    },
+
+    legend: {
+      backgroundColor: '#ffffff',
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
 
     series: [{
       name: 'CPU',
       data: dataCpu
-    }, {
-      color: '#ba55d3',
-      name: 'RAM',
-      data: dataRam
     }],
 
     responsive: {

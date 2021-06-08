@@ -4,6 +4,7 @@
     var erro = []
 
     function cadastro() {
+
         var novoUsuario = {
             telComercial: telComercial.value,
             cel: cel.value,
@@ -37,7 +38,7 @@
     }
 
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         var usuario = cadastro();
         var erros = validaUsuario(usuario);
@@ -47,9 +48,18 @@
         } else {
             ul.classList.add('invisivel');
 
+            var telCom = telComercial.value.replaceAll('(', '');
+            telCom = telCom.replaceAll(')', '');
+            telCom = telCom.replaceAll('-', '');
+            telCom = telCom.replaceAll(' ', '');
+
+            var celular = cel.value.replaceAll('(', '');
+            celular = celular.replaceAll(')', '');
+            celular = celular.replaceAll('-', '');
+            celular = celular.replaceAll(' ', '');
             var form = {
-                telefoneComercial: telComercial.value,
-                telefoneCelular: cel.value,
+                telefoneComercial: telCom,
+                telefoneCelular: celular,
             }
 
             fetch(`/alteraCliente/${sessionStorage.cnpj}`, {
@@ -58,7 +68,7 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(form),
-            }).then(function (response) {
+            }).then(function(response) {
                 if (!response.ok) {
                     var erro = [response];
                     exibeErro(erro, 1);

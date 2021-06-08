@@ -1,10 +1,11 @@
 var teste;
 var id;
+var map;
 var data = [
-    ['AF', 10],
+    ['AF', 0],
     ['BT', 0],
     ['CL', 0],
-    ['CS', 100],
+    ['CS', 0],
     ['CV', 0],
     ['AD', 0],
     ['CT', 0],
@@ -37,7 +38,7 @@ var data = [
 fetch('./json/geojs-35-mun.json').then((res) => {
     return res.json();
 }).then((res) => {
-    Highcharts.mapChart('container', {
+    map = Highcharts.mapChart('container', {
         chart: {
             map: res,
             width: 1000,
@@ -45,7 +46,7 @@ fetch('./json/geojs-35-mun.json').then((res) => {
         },
 
         title: {
-            text: 'Maquinas para manutenção',
+            text: 'Maquinas Registradas',
         },
         mapNavigation: {
             enabled: true,
@@ -59,9 +60,9 @@ fetch('./json/geojs-35-mun.json').then((res) => {
         },
         series: [{
             data: data,
-            cursor: 'pointer',
-            keys: ['sp_codigo', 'value'],
-            joinBy: 'sp_codigo',
+            // cursor: 'pointer',
+            keys: ['sp_nome', 'value'],
+            joinBy: 'sp_nome',
             name: 'Maquinas',
             states: {
                 hover: {

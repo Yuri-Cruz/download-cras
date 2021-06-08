@@ -57,27 +57,19 @@
     </header>
     <main class="main" id="trueMain">
         <section id="main" class="main">
-            <div id="boxCima" class="boxCima">
-                <div id="background-gauge1" class="background">
-                    <div id="gauge1" class="gauges">
-                        <div id="container-cpu" class="grafico-cpu"></div>
-                    </div>
-                </div>
-                <img id="logo" src="./img/icone.png" alt="">
-                <div id="background-gauge2" class="background">
-                    <div id="gauge2" class="gauges">
-                        <div id="container-ram" class="grafico-ram"></div>
-                    </div>
+            <div id="background-gauge1" class="background">
+                <div id="gauge1" class="gauges">
+                    <div id="container" class="grafico-cpu"></div>
                 </div>
             </div>
-            <div id="background-grafico" class="background-grafico">
-                <div id="boxGraph" class="boxGraph">
-                    <div id="container" class="grafico"></div>
+            <div id="background-gauge2" class="background">
+                <div id="gauge2" class="gauges">
+                    <div id="container-ram" class="grafico-ram"></div>
                 </div>
+            </div>
+            <div class="discos" id="ds">
             </div>
         </section>
-        <div class="discos" id="ds">
-        </div>
         <div class="gambi"></div>
     </main>
     <div class="fundo-modal" id="modal">
@@ -112,7 +104,6 @@
 
 </html>
 <script src="js/CPU.js"></script>
-<script src="js/Ram.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/populatabelas.js"></script>
 <script src="js/modal.js"></script>

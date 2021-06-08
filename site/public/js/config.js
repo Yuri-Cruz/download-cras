@@ -5,7 +5,7 @@ var parametro;
 
 fetch(`/usuario/${sessionStorage.email}`, {
     method: 'GET',
-}).then(function (response) {
+}).then(function(response) {
     return response.json();
 }).then(user => {
     console.log(user);
@@ -17,7 +17,7 @@ fetch(`/usuario/${sessionStorage.email}`, {
 
 fetch(`/cliente/${sessionStorage.cnpj}`, {
     method: 'GET',
-}).then(function (response) {
+}).then(function(response) {
     return response.json();
 }).then(user => {
     console.log(user);
@@ -30,24 +30,23 @@ fetch(`/cliente/${sessionStorage.cnpj}`, {
     cliente = user;
     fetch(`/endereco/${user.fkCep}`, {
         method: 'GET',
-    }).then(function (response) {
+    }).then(function(response) {
         return response.json();
     }).then(res => {
         console.log(res);
-        endereco.value = res.logradouro +","+user.numero +" "+ user.complemento +" " + res.bairro  +" "+ res.cidade + "-" + res.estado  +" "+ res.cep;
+        endereco.value = res.logradouro + "," + user.numero + " " + user.complemento + " " + res.bairro + " " + res.cidade + "-" + res.estado + " " + res.cep;
     })
 });
 
 fetch(`/parametro/${sessionStorage.cnpj}`, {
     method: 'GET',
-}).then(function (response) {
+}).then(function(response) {
     return response.json();
 }).then(user => {
     console.log(user);
     cpu.value = user.cpu
-    ram.value = user.ram 
+    ram.value = user.ram
     disco.value = user.discos
 
     parametro = user
 });
-

@@ -17,17 +17,13 @@ function menu() {
         document.getElementById('ulTexto').style.display = 'flex';
         document.getElementById('icone').style.display = 'none';
         document.getElementById('logoGrande').style.display = 'flex';
-        document.getElementById('main').style = `width: 95%; height: 100vh; flex-direction: column;`;
-        document.getElementById('boxCima').style = `border-radius: 15px; width: 86%; height: 37%; flex-direction: row; justify-content: space-evenly; background:rgb(49, 49, 49)`;
-        document.getElementById('boxGraph').style = `width: 91%; height: 83%; display: flex; justify-content: center;`;
-        document.getElementById('gauge1').style = `width: 100%; height: 100%;`;
-        document.getElementById('gauge2').style = `width: 100%; height: 100%;`;
-        document.getElementById('background-gauge1').style = `width: 34.5%; height: 86%;`;
-        document.getElementById('background-gauge2').style = `width: 34.5%; height: 86%;`;
-        document.getElementById('background-grafico').style = `width: 86%; height: 57%`;
-        document.getElementById('logo').style = `display:block; height: 140px`;
-        document.getElementById('ds').style = `width: 82%; color: #ffffffad`;
-        document.getElementById('trueMain').style = `margin-left: 270px`;
+        document.getElementById('main').style = `width: 80%; height: fit-content; flex-direction: column;`;
+        document.getElementById('gauge1').style = `width: 80%; height: 80%;`;
+        document.getElementById('gauge2').style = `width: 80%; height: 80%;`;
+        document.getElementById('background-gauge1').style = `width: 100%; height: 300px;`;
+        document.getElementById('background-gauge2').style = `width: 100%; height: 300px;`;
+        document.getElementById('ds').style = `width: 80%; color: #ffffffad`;
+        document.getElementById('trueMain').style = `margin-left: 215px`;
 
 
 
@@ -39,16 +35,12 @@ function menu() {
         document.getElementById('ulTexto').style.display = 'none';
         document.getElementById('icone').style.display = 'flex';
         document.getElementById('logoGrande').style.display = 'none';
-        document.getElementById('main').style = `width: 95%; height: 100vh; flex-direction: row; justify-content: space-evenly;`;
-        document.getElementById('boxCima').style = `width: 30%; height: 90%; flex-direction: column; justify-content: space-evenly;`;
-        document.getElementById('boxGraph').style = ` width: 90%; height: 80%;`;
+        document.getElementById('main').style = `width: 95%;`;
         document.getElementById('gauge1').style = `width: 85%; height: 80%;`;
         document.getElementById('gauge2').style = `width: 85%; height: 80%;`;
-        document.getElementById('background-gauge1').style = `width: 100%; height: 45%; align-items: center; justify-content: center`;
-        document.getElementById('background-gauge2').style = `width: 100%; height: 45%; align-items: center; justify-content: center`;
-        document.getElementById('background-grafico').style = `width: 64%; height: 85%; `;
-        document.getElementById('logo').style = `display:none;`;
-        document.getElementById('ds').style = `width: 90%`;
+        document.getElementById('background-gauge1').style = `width: 81%; height: 500px;`;
+        document.getElementById('background-gauge2').style = `width: 81%; height: 500px;`;
+        document.getElementById('ds').style = `width: 69%`;
         document.getElementById('trueMain').style = `margin-left: 68px`;
 
 
